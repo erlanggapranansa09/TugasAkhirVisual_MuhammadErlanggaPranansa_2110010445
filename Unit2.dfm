@@ -108,6 +108,7 @@ object Form2: TForm2
     Height = 49
     Caption = 'EDIT'
     TabOrder = 3
+    OnClick = btn3Click
   end
   object btn4: TButton
     Left = 408
@@ -116,6 +117,7 @@ object Form2: TForm2
     Height = 49
     Caption = 'HAPUS'
     TabOrder = 4
+    OnClick = btn4Click
   end
   object btn5: TButton
     Left = 512
