@@ -42,6 +42,7 @@ type
     procedure btn2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure dbgrd1CellClick(Column: TColumn);
+    procedure btn3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -172,6 +173,26 @@ id:=zqry1.Fields[0].AsString;
   edt5.Enabled := True;
   edt6.Enabled := True;
   edt7.Enabled := True;
+end;
+
+procedure TForm3.btn3Click(Sender: TObject);
+begin
+if (edt1.Text= '')or(edt2.Text= '')or(edt3.Text= '')or(edt4.Text= '')or(edt5.Text= '')or(edt6.Text= '')or(edt7.Text= '') then
+begin
+  ShowMessage('Inputan Wajib Di Isi');
+end else
+
+begin
+  ShowMessage('Data Berhasil Di Update');
+  zqry1.SQL.Clear;
+  zqry1.SQL.Add('Update tabel_wali_kelas set nik="'+edt1.Text+'",nama="'+edt2.Text+'",jk="'+edt3.Text+'",pendidikan="'+edt4.Text+'",matpel="'+edt5.Text+'",tingkat_kelas="'+edt6.Text+'",jabatan="'+edt7.Text+'" where id="'+id+'"');
+  zqry1.ExecSQL;
+
+  zqry1.SQL.Clear;
+  zqry1.SQL.Add('select*from tabel_wali_kelas');
+  zqry1.Open;
+  posisiawal;
+end;
 end;
 
 end.
