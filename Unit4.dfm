@@ -117,6 +117,7 @@ object Form4: TForm4
     Height = 49
     Caption = 'HAPUS'
     TabOrder = 7
+    OnClick = btn4Click
   end
   object btn5: TButton
     Left = 552
