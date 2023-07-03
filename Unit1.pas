@@ -55,6 +55,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure btn2Click(Sender: TObject);
     procedure dbgrd1CellClick(Column: TColumn);
+    procedure btn3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -237,6 +238,26 @@ edt12.Text := zqry1.FieldList[13].AsString;
   edt11.Enabled := True;
   edt12.Enabled := True;
   dtp1.Enabled := True;
+end;
+
+procedure TForm1.btn3Click(Sender: TObject);
+begin
+if (edt1.Text= '')or(edt2.Text= '')or(edt3.Text= '')or(edt4.Text= '')or(edt5.Text= '')or(edt6.Text= '')or(edt7.Text= '')or(edt8.Text= '')or(edt9.Text= '')or(edt10.Text= '')or(edt11.Text= '')or(edt12.Text= '') then
+begin
+  ShowMessage('Inputan Wajib Di Isi');
+end else
+
+begin
+  ShowMessage('Data Berhasil Di Update');
+  zqry1.SQL.Clear;
+  zqry1.SQL.Add('Update data_siswa set nis="'+edt1.Text+'",nisn="'+edt2.Text+'",nik="'+edt3.Text+'",nama="'+edt4.Text+'",tempat_lahir="'+edt5.Text+'",tanggal_lahir="'+formatdatetime('yyyy-mm-dd',dtp1.date)+'",jenis_kelamin="'+edt6.Text+'",kelas="'+edt7.Text+'",jurusan="'+edt8.Text+'",wali_kelas="'+edt9.Text+'",alamat="'+edt10.Text+'",no_telepon="'+edt11.Text+'",status="'+edt12.Text+'" where id ="'+id+'"');
+  zqry1.ExecSQL;
+
+  zqry1.SQL.Clear;
+  zqry1.SQL.Add('select*from data_siswa');
+  zqry1.Open;
+  posisiawal;
+end;
 end;
 
 end.
