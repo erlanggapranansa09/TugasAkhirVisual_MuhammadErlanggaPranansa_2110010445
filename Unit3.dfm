@@ -1,6 +1,6 @@
 object Form3: TForm3
-  Left = 192
-  Top = 152
+  Left = 194
+  Top = 164
   Width = 1044
   Height = 540
   Caption = 'Form3'
@@ -11,6 +11,7 @@ object Form3: TForm3
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object lbl2: TLabel
@@ -87,6 +88,7 @@ object Form3: TForm3
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = dbgrd1CellClick
   end
   object edt1: TEdit
     Left = 200
@@ -153,6 +155,7 @@ object Form3: TForm3
     Height = 49
     Caption = 'SIMPAN'
     TabOrder = 9
+    OnClick = btn2Click
   end
   object btn3: TButton
     Left = 344

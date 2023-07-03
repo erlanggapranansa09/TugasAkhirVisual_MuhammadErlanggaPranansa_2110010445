@@ -39,6 +39,9 @@ type
     procedure btn1Click(Sender: TObject);
     procedure posisiawal;
     procedure bersih;
+    procedure btn2Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure dbgrd1CellClick(Column: TColumn);
   private
     { Private declarations }
   public
@@ -95,6 +98,80 @@ begin
   edt5.Enabled := False;
   edt6.Enabled := False;
   edt7.Enabled := False;
+end;
+
+procedure TForm3.btn2Click(Sender: TObject);
+begin
+if edt1.Text =''then
+begin
+  ShowMessage('NIK TIDAK BOLEH KOSONG');
+  end else
+if edt2.Text =''then
+begin
+  ShowMessage('NAMA TIDAK BOLEH KOSONG');
+  end else
+if edt3.Text =''then
+begin
+  ShowMessage('JENIS KELAMIN TIDAK BOLEH KOSONG');
+  end else
+if edt4.Text =''then
+begin
+  ShowMessage('PENDIDIKAN TIDAK BOLEH KOSONG');
+  end else
+if edt5.Text =''then
+begin
+  ShowMessage('MATA PELAJARAN TIDAK BOLEH KOSONG');
+  end else
+if edt6.Text =''then
+begin
+  ShowMessage('TINGKAT KELAS TIDAK BOLEH KOSONG');
+  end else
+if edt7.Text =''then
+begin
+  ShowMessage('JABATAN TIDAK BOLEH KOSONG');
+  end else
+begin
+  //simpan
+end;
+zqry1.SQL.Clear;
+zqry1.SQL.Add('insert into tabel_wali_kelas values(null,"'+edt1.text+'","'+edt2.text+'","'+edt3.text+'","'+edt4.text+'","'+edt5.text+'","'+edt6.text+'","'+edt7.text+'")');
+zqry1.ExecSQL;
+
+zqry1.SQL.Clear;
+zqry1.SQL.Add('select * from tabel_wali_kelas');
+zqry1.Open;
+ShowMessage('Data Berhasil Disimpan');
+posisiawal;
+end;
+
+procedure TForm3.FormCreate(Sender: TObject);
+begin
+posisiawal;
+end;
+
+procedure TForm3.dbgrd1CellClick(Column: TColumn);
+begin
+id:=zqry1.Fields[0].AsString;
+  edt1.Text := zqry1.FieldList[1].AsString;
+  edt2.Text := zqry1.FieldList[2].AsString;
+  edt3.Text := zqry1.FieldList[3].AsString;
+  edt4.Text := zqry1.FieldList[4].AsString;
+  edt5.Text := zqry1.FieldList[5].AsString;
+  edt6.Text := zqry1.FieldList[6].AsString;
+  edt7.Text := zqry1.FieldList[7].AsString;
+
+  btn1.Enabled := False;
+  btn2.Enabled := False;
+  btn3.Enabled := True;
+  btn4.Enabled := True;
+  btn5.Enabled := True;
+  edt1.Enabled := True;
+  edt2.Enabled := True;
+  edt3.Enabled := True;
+  edt4.Enabled := True;
+  edt5.Enabled := True;
+  edt6.Enabled := True;
+  edt7.Enabled := True;
 end;
 
 end.
