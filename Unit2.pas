@@ -43,6 +43,7 @@ type
     procedure btn3Click(Sender: TObject);
     procedure btn4Click(Sender: TObject);
     procedure btn5Click(Sender: TObject);
+    procedure btn6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -210,6 +211,11 @@ end;
 procedure TForm2.btn5Click(Sender: TObject);
 begin
 bersih;
+end;
+
+procedure TForm2.btn6Click(Sender: TObject);
+begin
+frxrprt1.ShowReport();
 end;
 
 end.
