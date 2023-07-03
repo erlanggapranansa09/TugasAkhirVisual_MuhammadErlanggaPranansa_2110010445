@@ -191,6 +191,7 @@ object Form3: TForm3
     Height = 49
     Caption = 'LAPORAN'
     TabOrder = 13
+    OnClick = btn6Click
   end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP
