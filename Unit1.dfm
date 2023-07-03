@@ -166,6 +166,7 @@ object Form1: TForm1
     Height = 49
     Caption = 'BATAL'
     TabOrder = 4
+    OnClick = btn5Click
   end
   object edt2: TEdit
     Left = 200

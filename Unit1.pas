@@ -57,6 +57,7 @@ type
     procedure dbgrd1CellClick(Column: TColumn);
     procedure btn3Click(Sender: TObject);
     procedure btn4Click(Sender: TObject);
+    procedure btn5Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -279,6 +280,11 @@ begin
   posisiawal;
 
 end;
+end;
+
+procedure TForm1.btn5Click(Sender: TObject);
+begin
+bersih;
 end;
 
 end.
