@@ -260,6 +260,7 @@ object Form1: TForm1
     Height = 49
     Caption = 'HAPUS'
     TabOrder = 17
+    OnClick = btn4Click
   end
   object edt1: TEdit
     Left = 200
