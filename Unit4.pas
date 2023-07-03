@@ -34,6 +34,7 @@ type
     procedure btn2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure dbgrd1CellClick(Column: TColumn);
+    procedure btn3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -129,6 +130,26 @@ id:=zqry1.Fields[0].AsString;
   edt1.Enabled := True;
   edt2.Enabled := True;
   edt3.Enabled := True;
+end;
+
+procedure TForm4.btn3Click(Sender: TObject);
+begin
+if (edt1.Text= '')or(edt2.Text= '')or(edt3.Text= '') then
+begin
+  ShowMessage('Inputan Wajib Di Isi');
+end else
+
+begin
+  ShowMessage('Data Berhasil Di Update');
+  zqry1.SQL.Clear;
+  zqry1.SQL.Add('Update tabel_poin set nama="'+edt1.Text+'",total="'+edt2.Text+'",status="'+edt3.Text+'" where id ="'+id+'"');
+  zqry1.ExecSQL;
+
+  zqry1.SQL.Clear;
+  zqry1.SQL.Add('select*from tabel_poin');
+  zqry1.Open;
+  posisiawal;
+  end;
 end;
 
 end.
