@@ -11,6 +11,7 @@ object Form2: TForm2
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object lbl2: TLabel
@@ -80,6 +81,7 @@ object Form2: TForm2
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = dbgrd1CellClick
   end
   object btn1: TButton
     Left = 88
@@ -97,6 +99,7 @@ object Form2: TForm2
     Height = 49
     Caption = 'SIMPAN'
     TabOrder = 2
+    OnClick = btn2Click
   end
   object btn3: TButton
     Left = 304
@@ -190,6 +193,7 @@ object Form2: TForm2
   end
   object zqry1: TZQuery
     Connection = con1
+    Active = True
     SQL.Strings = (
       'SELECT * FROM tabel_ortu')
     Params = <>
