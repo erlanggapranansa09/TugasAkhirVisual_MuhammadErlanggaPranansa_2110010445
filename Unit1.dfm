@@ -11,6 +11,7 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object lbl2: TLabel
@@ -129,6 +130,7 @@ object Form1: TForm1
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = dbgrd1CellClick
   end
   object btn1: TButton
     Left = 104
@@ -146,6 +148,7 @@ object Form1: TForm1
     Height = 49
     Caption = 'SIMPAN'
     TabOrder = 2
+    OnClick = btn2Click
   end
   object btn3: TButton
     Left = 320
